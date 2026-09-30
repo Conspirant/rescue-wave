@@ -52,11 +52,11 @@ export function StatusDot({
   className?: string;
 }) {
   const toneClass = {
-    success: "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]",
-    warning: "bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]",
-    critical: "bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]",
-    muted: "bg-slate-500",
-    accent: "bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.5)]",
+    success: "bg-emerald-600 shadow-[0_0_8px_rgba(5,150,105,0.4)]",
+    warning: "bg-amber-600 shadow-[0_0_8px_rgba(217,119,6,0.4)]",
+    critical: "bg-rose-600 shadow-[0_0_8px_rgba(220,38,38,0.4)]",
+    muted: "bg-slate-400",
+    accent: "bg-sky-600 shadow-[0_0_8px_rgba(2,132,199,0.4)]",
   }[tone];
 
   return (
@@ -98,16 +98,16 @@ export function Readout({
 }) {
   const toneClass = {
     default: "text-foreground",
-    success: "text-emerald-400",
-    warning: "text-amber-400",
-    critical: "text-rose-400",
-    accent: "text-sky-400",
+    success: "text-emerald-700",
+    warning: "text-amber-800",
+    critical: "text-rose-700",
+    accent: "text-sky-700",
   }[tone ?? "default"];
 
   return (
     <div
       className={cn(
-        "flex flex-col justify-between rounded-lg border border-border/70 bg-surface-muted/30 p-2.5 transition-all duration-150 hover:bg-surface-muted/50 hover:border-border",
+        "flex flex-col justify-between rounded-lg border border-border bg-slate-50/60 p-2.5 transition-all duration-150 hover:bg-slate-100/60 hover:border-border-strong",
         className
       )}
     >

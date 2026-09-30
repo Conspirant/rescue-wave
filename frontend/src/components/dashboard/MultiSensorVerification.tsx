@@ -43,15 +43,15 @@ export function MultiSensorVerification({ className }: { className?: string }) {
         {rows.map(({ icon: Icon, label, description, ok, text }) => (
           <li
             key={label}
-            className="flex items-center justify-between gap-3 rounded-lg border border-border/70 bg-surface-muted/30 p-2.5 transition-colors hover:bg-surface-muted/50"
+            className="flex items-center justify-between gap-3 rounded-lg border border-border bg-slate-50/60 p-2.5 transition-colors hover:bg-slate-100/60"
           >
             <div className="flex items-center gap-2.5">
               <div
                 className={cn(
                   "flex size-7 items-center justify-center rounded-md border",
                   ok
-                    ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
-                    : "border-border/60 bg-surface-muted text-muted-foreground"
+                    ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                    : "border-border bg-slate-100 text-muted-foreground"
                 )}
               >
                 <Icon className="size-3.5" />
@@ -66,7 +66,7 @@ export function MultiSensorVerification({ className }: { className?: string }) {
               <span
                 className={cn(
                   "text-xs font-medium",
-                  ok ? "text-emerald-400 font-semibold" : "text-muted-foreground"
+                  ok ? "text-emerald-700 font-semibold" : "text-muted-foreground"
                 )}
               >
                 {text}
@@ -75,8 +75,8 @@ export function MultiSensorVerification({ className }: { className?: string }) {
                 className={cn(
                   "flex size-5 items-center justify-center rounded-full border",
                   ok
-                    ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-400"
-                    : "border-border/60 bg-surface text-muted-foreground"
+                    ? "border-emerald-200 bg-emerald-100 text-emerald-700"
+                    : "border-border bg-surface text-muted-foreground"
                 )}
               >
                 {ok ? <Check className="size-3" /> : <Minus className="size-3" />}
@@ -90,10 +90,10 @@ export function MultiSensorVerification({ className }: { className?: string }) {
         className={cn(
           "mt-3 rounded-xl border p-3 transition-colors",
           status === "POSSIBLE SURVIVOR"
-            ? "border-rose-500/30 bg-rose-500/10 text-rose-300"
+            ? "border-rose-200 bg-rose-50 text-rose-800"
             : status === "UNVERIFIED TARGET"
-              ? "border-amber-500/30 bg-amber-500/10 text-amber-300"
-              : "border-border/70 bg-surface-muted/30 text-muted-foreground"
+              ? "border-amber-200 bg-amber-50 text-amber-800"
+              : "border-border bg-slate-50 text-muted-foreground"
         )}
       >
         <div className="flex items-center gap-2">

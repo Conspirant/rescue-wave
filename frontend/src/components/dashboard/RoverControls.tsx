@@ -27,7 +27,7 @@ export function RoverControls({ className }: { className?: string }) {
       variant="outline"
       size="icon"
       aria-label={label}
-      className="size-10 rounded-xl border-border/80 bg-surface-muted/50 transition-all hover:bg-sky-500/20 hover:text-sky-300 hover:border-sky-500/40"
+      className="size-10 rounded-xl border-border bg-white text-slate-700 transition-all hover:bg-sky-50 hover:text-sky-700 hover:border-sky-300 shadow-xs"
       onClick={() => actions.nudge(heading)}
     >
       <Icon className="size-4" />
@@ -40,7 +40,7 @@ export function RoverControls({ className }: { className?: string }) {
       title="Rover Manual Flight & Drive Deck"
       subtitle={`Unit ${state.rover.roverId} · Safety override interlocks active`}
       actions={
-        <span className="flex items-center gap-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 px-2.5 py-0.5 text-xs font-medium text-sky-400">
+        <span className="flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-700">
           <StatusDot tone={state.rover.status === "MOVING" ? "accent" : "muted"} pulse />
           <span className="capitalize">{state.rover.status.toLowerCase()}</span>
         </span>
@@ -48,7 +48,7 @@ export function RoverControls({ className }: { className?: string }) {
     >
       <div className="flex flex-wrap items-center gap-6">
         {/* D-Pad Directional Controller */}
-        <div className="rounded-2xl border border-border/80 bg-surface-muted/30 p-2.5 shadow-inner">
+        <div className="rounded-2xl border border-border bg-slate-50/70 p-2.5 shadow-inner">
           <div className="grid grid-cols-3 gap-1.5">
             <span />
             {dirBtn("Forward", 0, ArrowUp)}
@@ -57,12 +57,12 @@ export function RoverControls({ className }: { className?: string }) {
             <Button
               variant="secondary"
               size="icon"
-              className="size-10 rounded-xl border border-border/60 bg-surface shadow-sm"
+              className="size-10 rounded-xl border border-border bg-white shadow-xs"
               aria-label="Hold Position"
               onClick={() => actions.setRoverStatus("IDLE")}
               title="Hold Position"
             >
-              <span className="size-2.5 rounded-full bg-sky-400 ring-2 ring-sky-500/30" />
+              <span className="size-2.5 rounded-full bg-sky-600 ring-2 ring-sky-300" />
             </Button>
             {dirBtn("Right", 90, ArrowRight)}
             <span />
@@ -83,8 +83,8 @@ export function RoverControls({ className }: { className?: string }) {
                   className={cn(
                     "flex-1 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-150 capitalize",
                     state.rover.mode === m
-                      ? "border-sky-500/40 bg-sky-500/20 text-sky-300 font-semibold shadow-sm"
-                      : "border-border/70 bg-surface-muted/40 text-muted-foreground hover:bg-surface-muted hover:text-foreground"
+                      ? "border-sky-300 bg-sky-50 text-sky-800 font-semibold shadow-xs"
+                      : "border-border bg-slate-50 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                   )}
                 >
                   {m.toLowerCase()}
@@ -96,7 +96,7 @@ export function RoverControls({ className }: { className?: string }) {
           <div>
             <div className="flex justify-between text-xs font-medium">
               <span className="text-muted-foreground">Speed Governor Limit</span>
-              <span className="value-tech font-bold text-sky-400">{state.rover.speed.toFixed(1)} m/s</span>
+              <span className="value-tech font-bold text-sky-700">{state.rover.speed.toFixed(1)} m/s</span>
             </div>
             <div className="mt-2">
               <Slider

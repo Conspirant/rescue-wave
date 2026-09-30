@@ -65,77 +65,60 @@
 :root {
   --radius: 0.625rem;
 
-  /* Polished Dark Slate Command Theme */
-  --background: #090d16;
-  --foreground: #f1f5f9;
-  --surface: #0f172a;
-  --surface-muted: #1e293b;
-  --card: #0f172a;
-  --card-foreground: #f1f5f9;
-  --popover: #0f172a;
-  --popover-foreground: #f1f5f9;
+  /* Premium Crisp White Command Theme */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
 
   --primary: #0284c7;
   --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --secondary-foreground: #f1f5f9;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #38bdf8;
-  --accent-foreground: #090d16;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #0284c7;
+  --accent-foreground: #ffffff;
 
-  --critical: #ef4444;
+  --critical: #dc2626;
   --critical-foreground: #ffffff;
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --warning: #f59e0b;
-  --caution: #eab308;
-  --success: #10b981;
+  --warning: #d97706;
+  --caution: #ca8a04;
+  --success: #059669;
 
-  --border: #1e293b;
-  --border-strong: #334155;
-  --input: #1e293b;
-  --ring: #38bdf8;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --input: #e2e8f0;
+  --ring: #0284c7;
 
-  --chart-1: #38bdf8;
-  --chart-2: #10b981;
-  --chart-3: #f59e0b;
-  --chart-4: #ef4444;
-  --chart-5: #a855f7;
+  --chart-1: #0284c7;
+  --chart-2: #059669;
+  --chart-3: #d97706;
+  --chart-4: #dc2626;
+  --chart-5: #7c3aed;
 
-  --sidebar: #0b1120;
-  --sidebar-foreground: #f1f5f9;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
   --sidebar-primary: #0284c7;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #38bdf8;
-  --sidebar-border: #1e293b;
-  --sidebar-ring: #38bdf8;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #0284c7;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #0284c7;
 
-  --shadow-panel: 0 4px 16px -2px rgba(0, 0, 0, 0.45);
-  --shadow-raised: 0 16px 36px -4px rgba(0, 0, 0, 0.65);
+  --shadow-panel: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-raised: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
 }
 
-.dark {
-  --background: #090d16;
-  --foreground: #f1f5f9;
-  --surface: #0f172a;
-  --surface-muted: #1e293b;
-  --card: #0f172a;
-  --card-foreground: #f1f5f9;
-  --popover: #0f172a;
-  --popover-foreground: #f1f5f9;
-  --primary: #0284c7;
-  --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --secondary-foreground: #f1f5f9;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #38bdf8;
-  --accent-foreground: #090d16;
-  --border: #1e293b;
-  --border-strong: #334155;
-  --input: #1e293b;
+.light,
+:root {
+  color-scheme: light;
 }
 
 @layer base {
@@ -160,11 +143,11 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: #cbd5e1;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #94a3b8;
   }
 }
 
@@ -192,8 +175,8 @@
 
 @utility grid-backdrop {
   background-image:
-    linear-gradient(to right, rgba(51, 65, 85, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
+    linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -250,15 +233,28 @@
 }
 
 .leaflet-container {
-  background: #090d16 !important;
+  background: #f1f5f9 !important;
   font-family: var(--font-sans);
 }
 .leaflet-control-attribution {
   font-size: 10px;
-  background: rgba(15, 23, 42, 0.8) !important;
-  color: #94a3b8 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #64748b !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
   backdrop-filter: blur(4px);
 }
 .leaflet-control-attribution a {
-  color: #38bdf8 !important;
+  color: #0284c7 !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 25px -3px rgba(15, 23, 42, 0.12) !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+}
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
 }

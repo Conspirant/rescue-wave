@@ -11,9 +11,9 @@ export function AlertRow({ alert }: { alert: AlertItem }) {
   const { actions } = useRescueWave();
 
   const severityBadge = {
-    CRITICAL: "bg-rose-500/15 text-rose-400 border-rose-500/30",
-    WARNING: "bg-amber-500/15 text-amber-400 border-amber-500/30",
-    INFO: "bg-sky-500/15 text-sky-400 border-sky-500/30",
+    CRITICAL: "bg-rose-50 text-rose-700 border-rose-200",
+    WARNING: "bg-amber-50 text-amber-800 border-amber-200",
+    INFO: "bg-sky-50 text-sky-700 border-sky-200",
   }[alert.severity];
 
   const borderLeft = {
@@ -25,9 +25,9 @@ export function AlertRow({ alert }: { alert: AlertItem }) {
   return (
     <li
       className={cn(
-        "group rounded-lg border border-border/80 border-l-4 bg-surface p-2.5 transition-all duration-150 hover:bg-surface-muted/30",
+        "group rounded-lg border border-border border-l-4 bg-surface p-2.5 transition-all duration-150 hover:bg-slate-50/70",
         borderLeft,
-        alert.severity === "CRITICAL" && !alert.acknowledged && "bg-rose-500/[0.04]",
+        alert.severity === "CRITICAL" && !alert.acknowledged && "bg-rose-50/40",
         alert.acknowledged && "opacity-60"
       )}
     >

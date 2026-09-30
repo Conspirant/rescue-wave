@@ -66,7 +66,7 @@ export function CommandBar() {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-sm font-bold tracking-tight text-foreground">RESCUEWAVE</span>
-            <span className="hidden items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400 sm:inline-flex">
+            <span className="hidden items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700 sm:inline-flex">
               <StatusDot tone="success" pulse />
               Active Link
             </span>
@@ -84,7 +84,7 @@ export function CommandBar() {
           value={state.mission.disasterType}
           onValueChange={(v) => actions.setDisaster(v as DisasterType)}
         >
-          <SelectTrigger className="h-8.5 w-32 sm:w-44 rounded-lg border-border/80 bg-surface-muted/50 text-xs font-medium text-foreground transition-colors hover:border-border">
+          <SelectTrigger className="h-8.5 w-32 sm:w-44 rounded-lg border-border bg-surface text-xs font-medium text-foreground transition-colors hover:border-border-strong">
             <SelectValue />
           </SelectTrigger>
           <SelectContent className="border-border bg-surface text-foreground shadow-raised">
@@ -109,11 +109,11 @@ export function CommandBar() {
           icon={BatteryMedium}
           label={`Rover ${state.rover.roverId}`}
           value={`${state.rover.battery.toFixed(0)}% bat · ${state.rover.status}`}
-          tone={state.rover.battery < 25 ? "text-rose-400" : "text-emerald-400"}
+          tone={state.rover.battery < 25 ? "text-rose-600 font-bold" : "text-emerald-700 font-bold"}
         />
 
         {/* Connection Status Pill */}
-        <div className="flex items-center gap-1.5 sm:gap-2 rounded-lg border border-border/70 bg-surface-muted/40 px-2 sm:px-2.5 py-1">
+        <div className="flex items-center gap-1.5 sm:gap-2 rounded-lg border border-border bg-surface-muted px-2 sm:px-2.5 py-1">
           <StatusDot tone={connected ? "success" : "critical"} pulse={!connected} />
           <div className="flex flex-col leading-none">
             <span className="hidden text-[10px] font-medium text-muted-foreground sm:inline">Network</span>
@@ -128,17 +128,17 @@ export function CommandBar() {
           <Button
             size="sm"
             variant="outline"
-            className="h-8 px-2 sm:px-2.5 gap-1.5 rounded-lg border-border/80 bg-surface-muted/40 text-xs font-medium transition-all hover:bg-surface-muted"
+            className="h-8 px-2 sm:px-2.5 gap-1.5 rounded-lg border-border bg-surface text-xs font-medium transition-all hover:bg-surface-muted"
             onClick={() => actions.setConnection(connected ? "OFFLINE" : "CONNECTED")}
             title="Simulate rover telemetry link disconnect or recovery"
           >
-            {connected ? <Wifi className="size-3.5 text-sky-400" /> : <WifiOff className="size-3.5 text-rose-400" />}
+            {connected ? <Wifi className="size-3.5 text-sky-600" /> : <WifiOff className="size-3.5 text-rose-600" />}
             <span className="hidden lg:inline">{connected ? "Online" : "Offline"}</span>
           </Button>
 
           <Button
             size="sm"
-            className="h-8 px-2.5 sm:px-3 gap-1.5 rounded-lg text-xs font-medium shadow-sm transition-all"
+            className="h-8 px-2.5 sm:px-3 gap-1.5 rounded-lg text-xs font-medium shadow-sm transition-all bg-sky-600 hover:bg-sky-700 text-white"
             variant={state.demoRunning ? "destructive" : "default"}
             onClick={() => (state.demoRunning ? actions.stopDemo() : actions.startDemo())}
           >
@@ -154,18 +154,18 @@ export function CommandBar() {
 
 export function TelemetryBadge() {
   return (
-    <span className="inline-flex items-center gap-1 text-sky-400">
+    <span className="inline-flex items-center gap-1 text-sky-700">
       <Activity className="size-3" />
-      <span className="text-xs font-medium text-sky-400">Live Telemetry</span>
+      <span className="text-xs font-medium text-sky-700">Live Telemetry</span>
     </span>
   );
 }
 
 export function ThreatBadge({ level }: { level: string }) {
   return (
-    <span className="inline-flex items-center gap-1 text-amber-400">
+    <span className="inline-flex items-center gap-1 text-amber-700">
       <ShieldAlert className="size-3" />
-      <span className="text-xs font-medium text-amber-400">{level}</span>
+      <span className="text-xs font-medium text-amber-700">{level}</span>
     </span>
   );
 }
