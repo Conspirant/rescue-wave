@@ -367,13 +367,14 @@ app.get("/api/database/test", (req, res) => {
 });
 
 // ========================================
-// START SERVER
-// ========================================
+const PORT = process.env.PORT || 5000;
 
-const PORT = 5000;
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(
+      `RescueWave backend running on http://localhost:${PORT}`
+    );
+  });
+}
 
-app.listen(PORT, () => {
-  console.log(
-    `RescueWave backend running on http://localhost:${PORT}`
-  );
-});
+module.exports = app;
