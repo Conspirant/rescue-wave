@@ -53,7 +53,7 @@ export function NavRail() {
                   : "text-slate-600 hover:bg-slate-100 hover:text-slate-900 border border-transparent"
               )}
             >
-              <Icon className={cn("size-4 shrink-0 transition-colors", active ? "text-sky-600" : "text-slate-400 group-hover:text-slate-700")} />
+              <Icon className={cn("size-4 shrink-0 transition-colors", active ? "text-sky-600" : "text-slate-500 group-hover:text-slate-800")} />
               <span className="whitespace-nowrap">{label}</span>
               {to === "/alerts" && unack > 0 && (
                 <span className="ml-auto flex items-center justify-center rounded-full bg-rose-100 px-2 py-0.5 text-[10px] font-bold text-rose-700 border border-rose-200">

@@ -8,16 +8,16 @@ export function RiskPanel({ className }: { className?: string }) {
   const profile = DISASTER_PROFILES[state.mission.disasterType];
 
   const riskBadge = {
-    LOW: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
-    MODERATE: "border-yellow-500/30 bg-yellow-500/10 text-yellow-400",
-    HIGH: "border-amber-500/30 bg-amber-500/10 text-amber-400",
-    CRITICAL: "border-rose-500/30 bg-rose-500/10 text-rose-400",
+    LOW: "border-emerald-200 bg-emerald-50 text-emerald-700",
+    MODERATE: "border-yellow-200 bg-yellow-50 text-yellow-800",
+    HIGH: "border-amber-200 bg-amber-50 text-amber-800",
+    CRITICAL: "border-rose-200 bg-rose-50 text-rose-700",
   };
 
   const riskBar = {
-    LOW: "bg-emerald-400",
-    MODERATE: "bg-yellow-400",
-    HIGH: "bg-amber-400",
+    LOW: "bg-emerald-500",
+    MODERATE: "bg-yellow-500",
+    HIGH: "bg-amber-500",
     CRITICAL: "bg-rose-500",
   };
 
@@ -31,7 +31,7 @@ export function RiskPanel({ className }: { className?: string }) {
         {state.risk.layers.map((l) => (
           <li
             key={l.id}
-            className="rounded-lg border border-border/70 bg-surface-muted/30 p-2.5 transition-colors hover:bg-surface-muted/50"
+            className="rounded-lg border border-border bg-slate-50/60 p-2.5 transition-colors hover:bg-slate-100/60"
           >
             <div className="flex items-center gap-2.5">
               <button
@@ -40,8 +40,8 @@ export function RiskPanel({ className }: { className?: string }) {
                 className={cn(
                   "rounded-md border px-2 py-0.5 text-[10px] font-semibold transition-all duration-150",
                   l.enabled
-                    ? "border-sky-500/40 bg-sky-500/15 text-sky-300"
-                    : "border-border/60 bg-surface text-muted-foreground/80 hover:text-foreground"
+                    ? "border-sky-300 bg-sky-50 text-sky-700 font-semibold shadow-xs"
+                    : "border-border bg-surface text-slate-600 hover:text-slate-900"
                 )}
               >
                 {l.enabled ? "Layer On" : "Layer Off"}
@@ -57,7 +57,7 @@ export function RiskPanel({ className }: { className?: string }) {
             </div>
 
             {/* Visual Risk Bar */}
-            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-muted">
+            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
               <div
                 className={cn("h-full rounded-full transition-all duration-300", riskBar[l.level])}
                 style={{ width: `${Math.min(100, l.unit === "%" ? l.value : l.value * 25)}%` }}

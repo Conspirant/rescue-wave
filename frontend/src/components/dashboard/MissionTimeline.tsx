@@ -31,17 +31,17 @@ export function MissionTimeline({
                 className={cn(
                   "absolute -left-[17px] top-3.5 size-2 rounded-full ring-4 ring-surface",
                   e.severity === "CRITICAL"
-                    ? "bg-rose-500 shadow-[0_0_6px_rgba(244,63,94,0.6)]"
+                    ? "bg-rose-500 shadow-[0_0_6px_rgba(244,63,94,0.4)]"
                     : e.severity === "WARNING"
-                      ? "bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.5)]"
-                      : "bg-sky-400 shadow-[0_0_6px_rgba(56,189,248,0.5)]"
+                      ? "bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.4)]"
+                      : "bg-sky-500 shadow-[0_0_6px_rgba(14,165,233,0.4)]"
                 )}
               />
               <span className="value-tech w-12 shrink-0 pt-0.5 text-[11px] font-medium text-muted-foreground">
                 {shortTime(e.time)}
               </span>
               <div className="min-w-0 flex-1">
-                <span className="block truncate text-xs font-semibold text-foreground group-hover:text-sky-300 transition-colors">
+                <span className="block truncate text-xs font-semibold text-foreground group-hover:text-sky-600 transition-colors">
                   {e.event}
                 </span>
                 {e.detail && <span className="block text-[11px] text-muted-foreground mt-0.5">{e.detail}</span>}

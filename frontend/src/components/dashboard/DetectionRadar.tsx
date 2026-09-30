@@ -26,26 +26,26 @@ export function DetectionRadar({ className }: { className?: string }) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
         {/* Radar Disc Viewport */}
         <div className="relative mx-auto aspect-square w-52 shrink-0">
-          <div className="absolute inset-0 rounded-full border border-slate-300 bg-slate-900 shadow-md" />
+          <div className="absolute inset-0 rounded-full border border-slate-200 bg-slate-50/90 shadow-inner" />
           
           {/* Concentric Range Rings */}
           {[0.75, 0.5, 0.25].map((r) => (
             <div
               key={r}
-              className="absolute rounded-full border border-slate-700/60"
+              className="absolute rounded-full border border-slate-200/90"
               style={{ inset: `${(1 - r) * 50}%` }}
             />
           ))}
 
           {/* Crosshairs */}
-          <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-700/60" />
-          <div className="absolute top-1/2 right-0 left-0 h-px bg-slate-700/60" />
+          <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-200" />
+          <div className="absolute top-1/2 right-0 left-0 h-px bg-slate-200" />
 
           {/* Range Labels */}
-          <span className="absolute top-1 left-1/2 -translate-x-1/2 text-[9px] font-mono text-slate-400">
+          <span className="absolute top-1 left-1/2 -translate-x-1/2 text-[9px] font-mono font-medium text-slate-500">
             12m
           </span>
-          <span className="absolute top-[26%] left-1/2 -translate-x-1/2 text-[9px] font-mono text-slate-400">
+          <span className="absolute top-[26%] left-1/2 -translate-x-1/2 text-[9px] font-mono font-medium text-slate-500">
             6m
           </span>
 
@@ -54,12 +54,12 @@ export function DetectionRadar({ className }: { className?: string }) {
             className="animate-sweep absolute inset-0 rounded-full pointer-events-none"
             style={{
               background:
-                "conic-gradient(from 0deg, rgba(56, 189, 248, 0.35), transparent 75deg)",
+                "conic-gradient(from 0deg, rgba(14, 165, 233, 0.22), transparent 75deg)",
             }}
           />
 
           {/* Center Origin (Rover Position) */}
-          <div className="absolute top-1/2 left-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-400 ring-4 ring-sky-400/30" />
+          <div className="absolute top-1/2 left-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-600 ring-4 ring-sky-100 shadow-sm" />
 
           {/* Active Target Contacts */}
           {active.map((d) => {
@@ -76,8 +76,8 @@ export function DetectionRadar({ className }: { className?: string }) {
               >
                 <span
                   className={cn(
-                    "block size-3 rounded-full ring-2 ring-slate-900 shadow-sm",
-                    isConfirmed ? "bg-rose-500" : "bg-amber-400"
+                    "block size-3 rounded-full ring-2 ring-white shadow-md",
+                    isConfirmed ? "bg-rose-500" : "bg-amber-500"
                   )}
                 />
                 {isConfirmed && (
