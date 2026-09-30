@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#090d16" />
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#1e293b" stroke-width="2" />
+  
+  <!-- Outer radar arc -->
+  <path d="M 12 32 A 20 20 0 0 1 52 32" fill="none" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+  
+  <!-- Mid radar arc -->
+  <path d="M 18 32 A 14 14 0 0 1 46 32" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" opacity="0.75" />
+  
+  <!-- Inner radar arc -->
+  <path d="M 24 32 A 8 8 0 0 1 40 32" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Wave pulse lines -->
+  <path d="M 20 44 L 28 36 L 36 44 L 44 36" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Center pulse beacon -->
+  <circle cx="32" cy="32" r="3.5" fill="#f8fafc" />
+  <circle cx="32" cy="32" r="5" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.8" />
+</svg>
